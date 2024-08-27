@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import * as React from "react";
 import CssBaseline from "@mui/material/CssBaseline";
 import Box from "@mui/material/Box";
@@ -30,8 +31,8 @@ const drawerWidth = 240;
 
 const menuItems = [
   { text: "Home", link: "/", icon: <HomeIcon /> },
-  { text: "Usuarios", link: "/usuarios", icon: <PeopleAltIcon /> },
-  { text: "Precios", link: "/precios", icon: <PriceChangeIcon /> },
+  { text: "Usuarios", link: "/usuarios", icon: <PeopleAltIcon/> },
+  { text: "Equipos", link: "/equipos", icon: <GroupsIcon/> },
   {
     text: "Proveedores",
     link: "/proveedores",
