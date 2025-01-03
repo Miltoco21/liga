@@ -1,20 +1,19 @@
 /* eslint-disable react-refresh/only-export-components */
 /* eslint-disable no-unused-vars */
 import React, { useState } from "react";
-import { createTheme, ThemeProvider } from "@mui/material/styles";
-import Box from "@mui/material/Box";
-import CssBaseline from "@mui/material/CssBaseline";
+
 import { Typography, Button, Dialog, Grid } from "@mui/material";
-import Modal from "@mui/material/Modal";
+
 import Add from "@mui/icons-material/Add";
 
-import SideBar from "../Componentes/NavBar/SideBar";
+import SideBar from "../NavBar/SideBar";
+import IngresoJugadores from "./IngresoJugadores";
 
-//
 
-export const defaultTheme = createTheme();
 
-export default function Usuarios() {
+
+
+export default function Jugadores() {
   const [open, setOpen] = useState(false);
   const handleOpenModal = () => {
     setOpen(true);
@@ -34,7 +33,7 @@ export default function Usuarios() {
             component="div"
             sx={{ mb: 4, textAlign: "center" }}
           >
-            Equipos
+          Jugadores
           </Typography>
           <Button
             variant="outlined"
@@ -45,9 +44,11 @@ export default function Usuarios() {
             startIcon={<Add />}
             onClick={handleOpenModal}
           >
-            Crear Nuevo equipooooo
+            Crear Jugador
           </Button>
-         
+
+          
+          
        
       </Grid>
 
@@ -70,7 +71,7 @@ export default function Usuarios() {
             style={{ height: "90%" }}
           >
             <Grid item xs={12} sm={12} md={12} lg={12}>
-              {/* <IngresoUsuarios onClose={handleCloseModal} /> */}
+              <IngresoJugadores onClose={handleCloseModal} />
             </Grid>
           </Grid>
         </Grid>

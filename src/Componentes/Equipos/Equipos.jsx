@@ -45,7 +45,7 @@ export default function Equipos() {
             startIcon={<Add />}
             onClick={handleOpenModal}
           >
-            Crear equipo
+            Crear nuevo equipo
           </Button>
 
           <TablaEquipos/>

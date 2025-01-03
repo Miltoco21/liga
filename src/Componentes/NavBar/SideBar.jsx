@@ -24,6 +24,7 @@ import GroupsIcon from '@mui/icons-material/Groups';
 import ReceiptIcon from '@mui/icons-material/Receipt';
 import SummarizeIcon from '@mui/icons-material/Summarize';
 import FactCheckIcon from '@mui/icons-material/FactCheck';
+import ManIcon from '@mui/icons-material/Man';
 
 
 
@@ -34,13 +35,13 @@ const menuItems = [
   { text: "Usuarios", link: "/usuarios", icon: <PeopleAltIcon/> },
   { text: "Equipos", link: "/equipos", icon: <GroupsIcon/> },
   {
-    text: "Proveedores",
-    link: "/proveedores",
-    icon: <LocalShippingIcon />,
-    subMenuItems: [
-      { text: "Ingreso Documento", link: "/proveedores/ingresodocumento", icon: <ReceiptIcon /> },
-      { text: "Documentos por pagar ", link: "/proveedores/reportes", icon: <ReceiptIcon /> },
-    ],
+    text: "Jugadores",
+    link: "/jugadores",
+    icon: <ManIcon />,
+    // subMenuItems: [
+    //   { text: "Ingreso Documento", link: "/proveedores/ingresodocumento", icon: <ReceiptIcon /> },
+    //   { text: "Documentos por pagar ", link: "/proveedores/reportes", icon: <ReceiptIcon /> },
+    // ],
   },
   { text: "Clientes", link: "/clientes", icon: <GroupsIcon/>, subMenuItems: [
     

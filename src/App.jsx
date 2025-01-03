@@ -9,11 +9,18 @@ import Login from './Pages/Login';
 import Usuarios from '../src/Componentes/Usuarios/Usuarios';
 import ProtectedRoute from './Componentes/ProtectedRoute';
 import Equipos from './Componentes/Equipos/Equipos';
+import Jugadores from './Componentes/Jugadores/Jugadores';
+import { LocalizationProvider } from '@mui/x-date-pickers';
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
+// import TeamDetails from './Componentes/Equipos/TeamDetails'; 
+import Plantilla from './Componentes/Equipos/Plantilla';
+
 
 function App() {
   const [userData, setUserData] = useState([]);
 
   return (
+    <LocalizationProvider dateAdapter={AdapterDayjs}>
     <Router>
       <Routes>
         <Route path="/login" element={<Login setUserData={setUserData} />} />
@@ -28,8 +35,11 @@ function App() {
         />
         <Route path="/usuarios" element={<ProtectedRoute element={<Usuarios />} />} />
         <Route path="/equipos" element={<ProtectedRoute element={<Equipos />} />} />
+        <Route path="/equipo/:nombre" element={<ProtectedRoute element={<Plantilla />} />} />
+        <Route path="/jugadores" element={<ProtectedRoute element={<Jugadores />} />} />
       </Routes>
     </Router>
+    </LocalizationProvider>
   );
 }
 

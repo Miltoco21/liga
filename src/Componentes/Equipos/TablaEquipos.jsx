@@ -15,8 +15,10 @@ import {
   Box,
   Snackbar,
   IconButton,
+  ButtonGroup,
 } from "@mui/material";
 import CloseIcon from "@mui/icons-material/Close";
+import { useNavigate } from "react-router-dom";
 
 const TablaEquipos = () => {
   const [data, setData] = useState([]);
@@ -24,6 +26,7 @@ const TablaEquipos = () => {
   const [selectedTeam, setSelectedTeam] = useState(null); // State for the selected team
   const [snackbarOpen, setSnackbarOpen] = useState(false);
   const [snackbarMessage, setSnackbarMessage] = useState("");
+  const navigate = useNavigate();
 
   const fetchData = async () => {
     try {
@@ -86,13 +89,17 @@ const TablaEquipos = () => {
   const handleCloseSnackbar = () => {
     setSnackbarOpen(false);
   };
+ ////MANEJADOR de EQUIPO
+ const handleViewTeam = (team) => {
+  navigate(`/equipo/${team.nombre}`);
+};
 
   const renderCard = (item) => (
     <Grid item xs={12} sm={2} md={2} key={item.id}>
       <Card
         sx={{
-          height: "150%",
-          width: "60%",
+          height: "110%",
+          width: "80%",
           display: "flex",
           flexDirection: "column",
           justifyContent: "center",
@@ -114,30 +121,37 @@ const TablaEquipos = () => {
             {item.email}
           </Typography>
           <Typography variant="body2" color="text.secondary">
-            Delegado:
+            Representante:
           </Typography>
           <Chip sx={{ m: 1 }} label={item.representante} />
+          <Typography variant="body2" color="text.secondary">
+            Capitán:
+          </Typography>
+          <Chip sx={{ m: 1 }} label={item.capitan} />
         </CardContent>
-        <Grid
-          sx={{
-            display: "flex",
-            justifyContent: "center",
-            gap: 1,
-            alignItems: "center",
-            margin: 1,
-          }}
+        <ButtonGroup 
+                orientation="vertical"
+
+        
         >
           <Button
+
+           sx={{ m: 1 }}
             variant="contained"
             color="primary"
             onClick={() => handleEditClick(item)}
           >
             Editar
           </Button>
-          <Button variant="contained" color="primary">
+          <Button sx={{ m: 1 }} variant="contained" color="primary">
             Borrar
           </Button>
-        </Grid>
+          <Button sx={{ m: 1 }} variant="contained" color="primary" onClick={() => handleViewTeam(item)}>
+            Ver equipo
+          </Button>
+
+
+        </ButtonGroup>
       </Card>
     </Grid>
   );
